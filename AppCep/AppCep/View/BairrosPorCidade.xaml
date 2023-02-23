@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppCep.View.BairrosPorCidade">
+    
     <ContentPage.Content>
 
         <AbsoluteLayout HorizontalOptions="FillAndExpand"
@@ -11,6 +12,7 @@
                 <StackLayout Orientation="Horizontal">
                     <Picker x:Name="pck_estado"
                             SelectedIndexChanged="pck_estado_SelectedIndexChanged"
+                            
                             Title="Selecione o Estado:">
                         <Picker.Items>
                             <x:String>SP</x:String>
@@ -20,8 +22,8 @@
                         </Picker.Items>
                     </Picker>
 
-                    <Picker x:Name="lst_bairros"
-                            SelectedIndexChanged=""
+                    <Picker x:Name="pck_bairros"
+                            
                             ItemDisplayBinding="{Binding descricao}"
                             Title="Selecione a cidade">
                     </Picker>
@@ -59,18 +61,12 @@
                            Padding="80">
                         <StackLayout>
                             <ActivityIndicator IsRunning="True" Color="#00A54F" />
-                            <Label Text="Carregando..." HorizontalOptions="Center" TextColor="#00A54F"</Label>
-
+                            <Label Text="Carregando..." HorizontalOptions="Center" TextColor="#00A54F" />
                         </StackLayout>
 
                     </Frame>
                 </StackLayout>
-
-
-
-
-
-
             </StackLayout>
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

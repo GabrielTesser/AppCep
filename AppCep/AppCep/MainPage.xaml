@@ -4,7 +4,9 @@
              x:Class="AppCep.MainPage">
 
     <StackLayout>
-        
+        <Frame BackgroundColor='Gray'>
+          <Label Text="CAVALO" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Title"/>
+        </Frame>
     </StackLayout>
 
 </ContentPage>
