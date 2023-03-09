@@ -92,13 +92,13 @@ namespace AppCep.Service
             return arr_logradouro;
         }
 
-        public static async Task<List<Cep>> GetCepByLogradouro(int id_cidade, string bairro)
+        public static async Task<List<Cep>> GetCepByLogradouro(int id_cidade, string logradouro)
         {
             List<Cep> arr_cep = new List<Cep>();
 
             using (HttpClient client = new HttpClient())
             {
-                HttpResponseMessage response = await client.GetAsync($"https://cep.metoda.com.br/cep/by-logradouro?logradouro={bairro}");
+                HttpResponseMessage response = await client.GetAsync($"https://cep.metoda.com.br/cep/by-logradouro?logradouro=" + logradouro);
 
                 if (response.IsSuccessStatusCode)
                 {
