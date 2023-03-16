@@ -15,21 +15,22 @@ namespace AppCep.Service
 
         public static async Task<Endereco> GetEnderecoByCep(string cep)
         {
-            Endereco end;
+            List<Endereco> arr_endereco = new List<Endereco>();
 
             using (HttpClient client = new HttpClient())
             {
                 HttpResponseMessage response = await client.GetAsync("https://cep.metoda.com.br/endereco/by-cep?cep=" + cep);
+
                 if (response.IsSuccessStatusCode)
                 {
                     string json = response.Content.ReadAsStringAsync().Result;
-                    end = JsonConvert.DeserializeObject<Endereco>(json);
+                    arr_endereco = JsonConvert.DeserializeObject<List<Endereco>>(json);
                 }
                 else
                     throw new Exception(response.RequestMessage.Content.ToString());
 
             }
-            return end;
+            return arr_endereco;
         }
 
         public static async Task<List<Bairro>> GetBairrosByCidade(int id_cidade)
@@ -38,7 +39,7 @@ namespace AppCep.Service
 
             using (HttpClient client = new HttpClient())
             {
-                HttpResponseMessage response = await client.GetAsync("https://cep.metoda.com.br/bairro/by-cidade?id_cidade=");
+                HttpResponseMessage response = await client.GetAsync("https://cep.metoda.com.br/bairro/by-cidade?id_cidade=" + id_cidade);
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -92,13 +93,13 @@ namespace AppCep.Service
             return arr_logradouro;
         }
 
-        public static async Task<List<Cep>> GetCepByLogradouro(int id_cidade, string logradouro)
+        public static async Task<List<Cep>> GetCepByLogradouro(string logradouro)
         {
             List<Cep> arr_cep = new List<Cep>();
 
             using (HttpClient client = new HttpClient())
             {
-                HttpResponseMessage response = await client.GetAsync($"https://cep.metoda.com.br/cep/by-logradouro?logradouro=" + logradouro);
+                HttpResponseMessage response = await client.GetAsync("https://cep.metoda.com.br/cep/by-logradouro?logradouro=" + logradouro);
 
                 if (response.IsSuccessStatusCode)
                 {

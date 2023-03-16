@@ -12,9 +12,10 @@
                 <StackLayout Orientation="Horizontal">
                     <Picker x:Name="pck_estado"
                             SelectedIndexChanged="pck_estado_SelectedIndexChanged"
-                            
+
                             Title="Selecione o Estado:">
                         <Picker.Items>
+                            
                             <x:String>SP</x:String>
                             <x:String>MG</x:String>
 

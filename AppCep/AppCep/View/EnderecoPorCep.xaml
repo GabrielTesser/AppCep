@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppCep.View.BuscaCepPorLogradouro">
+             x:Class="AppCep.View.BuscaEnderecoPorCep">
     <ContentPage.Content>
         <StackLayout>
 
             <StackLayout Orientation="Horizontal">
-                <SearchBar x:Name="txt_cep" Placeholder="Qual é a sua cep?"/>
+                <SearchBar x:Name="txt_cep" Placeholder="Qual é a seu CEP?"/>
 
                 <Button Text="Buscar" Clicked="Button_Clicked"/>
             </StackLayout>
@@ -14,7 +14,7 @@
             <ActivityIndicator x:Name="carregando" IsRunning="False"/>
 
 
-            <ListView x:Name="lst_ceps">
+            <ListView x:Name="lst_endereco">
                 <ListView.Header>
                     <Grid ColumnDefinitions="Auto, *, *, Auto" RowDefinitions="Auto">
 
@@ -41,13 +41,13 @@
                                 <Label Grid.Row="0" Grid.Column="3" Text="{Binding UF}"/>
 
                             </Grid>
-                            
+
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-                
+
             </ListView>
-            
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

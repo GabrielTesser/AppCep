@@ -1,19 +1,19 @@
-﻿using AppCep.Service;
+﻿using AppCep.Model;
+using AppCep.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AppCep.Model;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace AppCep.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class BuscaCepPorLogradouro : ContentPage
+    public partial class BuscaEnderecoPorCep : ContentPage
     {
-        public BuscaCepPorLogradouro()
+        public BuscaEnderecoPorCep()
         {
             InitializeComponent();
         }
@@ -24,15 +24,17 @@ namespace AppCep.View
             {
                 carregando.IsRunning = true;
 
-                List<Cep> arr_cep = await DataService.GetCepByLogradouro(txt_cep.Text);
+                List<Endereco> end = await DataService.GetEnderecoByCep(txt_cep.Text);
 
-                lst_ceps.ItemsSource = arr_cep;
+
+                lst_endereco.ItemsSource = end;
             }
             catch (Exception ex)
             {
                 await DisplayAlert("OPS", ex.Message, "OK");
 
-            } finally
+            }
+            finally
             {
                 carregando.IsRunning = false;
             }
