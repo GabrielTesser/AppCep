@@ -13,27 +13,26 @@ namespace AppCep.Service
     {
 
 
-        public static async Task<Endereco> GetEnderecoByCep(string cep)
+        public static async Task<Endereco> GetEnderecoByCep(string cep) //foi
         {
-            List<Endereco> arr_endereco = new List<Endereco>();
+            Endereco end;
 
             using (HttpClient client = new HttpClient())
             {
                 HttpResponseMessage response = await client.GetAsync("https://cep.metoda.com.br/endereco/by-cep?cep=" + cep);
-
                 if (response.IsSuccessStatusCode)
                 {
                     string json = response.Content.ReadAsStringAsync().Result;
-                    arr_endereco = JsonConvert.DeserializeObject<List<Endereco>>(json);
+                    end = JsonConvert.DeserializeObject<Endereco>(json);
                 }
                 else
                     throw new Exception(response.RequestMessage.Content.ToString());
 
             }
-            return arr_endereco;
+            return end;
         }
 
-        public static async Task<List<Bairro>> GetBairrosByCidade(int id_cidade)
+        public static async Task<List<Bairro>> GetBairrosByCidade(int id_cidade) 
         {
             List<Bairro> arr_bairros = new List<Bairro>();
 
@@ -53,7 +52,7 @@ namespace AppCep.Service
             return arr_bairros;
         }
 
-        public static async Task<List<Cidade>> GetCidadesByEstado(string uf)
+        public static async Task<List<Cidade>> GetCidadesByEstado(string uf) //foi
         {
             List<Cidade> arr_cidade = new List<Cidade>();
 
@@ -93,7 +92,7 @@ namespace AppCep.Service
             return arr_logradouro;
         }
 
-        public static async Task<List<Cep>> GetCepByLogradouro(string logradouro)
+        public static async Task<List<Cep>> GetCepByLogradouro(string logradouro) //foi
         {
             List<Cep> arr_cep = new List<Cep>();
 

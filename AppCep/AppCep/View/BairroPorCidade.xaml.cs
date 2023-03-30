@@ -1,19 +1,19 @@
-﻿using AppCep.Model;
-using AppCep.Service;
+﻿using AppCep.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AppCep.Model;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace AppCep.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class BuscaEnderecoPorCep : ContentPage
+    public partial class BairroPorCidade : ContentPage
     {
-        public BuscaEnderecoPorCep()
+        public BairroPorCidade()
         {
             InitializeComponent();
         }
@@ -22,14 +22,14 @@ namespace AppCep.View
         {
             try
             {
+        
+                
+
                 carregando.IsRunning = true;
 
-                Endereco end = await DataService.GetEnderecoByCep(txt_cep.Text);
+                List<Bairro> arr_bairros = await DataService.GetBairrosByCidade(txt_id_cidade.Text);
 
-                BindingContext= end;
-
-
-                //lst_endereco.ItemsSource = end;
+                lst_ceps.ItemsSource = arr_bairros;
             }
             catch (Exception ex)
             {

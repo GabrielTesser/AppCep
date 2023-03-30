@@ -12,9 +12,9 @@
 
             <Button Grid.Row="1" Grid.Column="1" Text="Buscar Cidade" Clicked="Button_Clicked_1"/>
 
-            <Button Grid.Row="2" Grid.Column="0" Text="Buscar Ruas de Bairro" Clicked="Button_Clicked_2"/>
+            <Button Grid.Row="2" Grid.Column="0" Text="Endereco por Cep" Clicked="Button_Clicked_2"/>
             
-            <Button Grid.Row="2" Grid.Column="1" Text=" Cep" Clicked="Button_Clicked_3"/>
+            <Button Grid.Row="2" Grid.Column="1" Text="Bairro por ID da Cidade" Clicked="Button_Clicked_3"/>
 
         </Grid>
     </ContentPage.Content>

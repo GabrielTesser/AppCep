@@ -1,12 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppCep.View.BuscaCepPorLogradouro">
+             x:Class="AppCep.View.BairroPorCidade">
     <ContentPage.Content>
         <StackLayout>
-
             <StackLayout Orientation="Horizontal">
-                <SearchBar x:Name="txt_cep" Placeholder="Qual é a sua cidade?"/>
+                <SearchBar x:Name="txt_id_cidade" Placeholder="Qual é o seu id da cidade?"/>
 
                 <Button Text="Buscar" Clicked="Button_Clicked"/>
             </StackLayout>
@@ -18,14 +17,7 @@
                 <ListView.Header>
                     <Grid ColumnDefinitions="Auto, *, *, Auto" RowDefinitions="Auto">
 
-                        <Label Grid.Row="0" Grid.Column="0" Text="CEP"/>
-
-                        <Label Grid.Row="0" Grid.Column="1" Text="Logradouro"/>
-
-                        <Label Grid.Row="0" Grid.Column="2" Text="Cidade"/>
-
-                        <Label Grid.Row="0" Grid.Column="3" Text="UF"/>
-
+                        <Label Grid.Row="0" Grid.Column="0" Text="Bairro"/>
                     </Grid>
                 </ListView.Header>
 
@@ -35,19 +27,15 @@
 
                             <Grid ColumnDefinitions="Auto, *, *, Auto" RowDefinitions="Auto">
 
-                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding CEP}"/>
-                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding descricao}"/>
-                                <Label Grid.Row="0" Grid.Column="2" Text="{Binding descricao_cidade}"/>
-                                <Label Grid.Row="0" Grid.Column="3" Text="{Binding UF}"/>
+                                <Label Grid.Row="0" Grid.Column="2" Text="{Binding descricao_bairro}"/>
 
                             </Grid>
-                            
+
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-                
+
             </ListView>
-            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
