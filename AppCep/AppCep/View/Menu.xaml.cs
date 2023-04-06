@@ -26,16 +26,22 @@ namespace AppCep.View
 
         private void Button_Clicked_1(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new View.BairrosPorCidade());
+            Navigation.PushAsync(new View.BuscaEnderecoPorCep());
         }
 
         private void Button_Clicked_2(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new View.BuscaEnderecoPorCep());
+            Navigation.PushAsync(new View.CidadePorEsrado());
         }
 
         private void Button_Clicked_3(object sender, EventArgs e)
         {
+            Navigation.PushAsync(new View.EnderecoPorBairroAndCidade());
+        }
+
+        private void Button_Clicked_4(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new View.BairroPorCidade());
         }
     }
 }

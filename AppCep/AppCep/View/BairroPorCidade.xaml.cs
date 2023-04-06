@@ -27,7 +27,7 @@ namespace AppCep.View
 
                 carregando.IsRunning = true;
 
-                List<Bairro> arr_bairros = await DataService.GetBairrosByCidade(txt_id_cidade.Text);
+                List<Bairro> arr_bairros = await DataService.GetBairrosByCidade(int.Parse(txt_id_cidade.Text));
 
                 lst_ceps.ItemsSource = arr_bairros;
             }

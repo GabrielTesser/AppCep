@@ -24,17 +24,17 @@ namespace AppCep.View
             {
                 carregando.IsRunning = true;
 
-                Endereco end = await DataService.GetEnderecoByCep(txt_cep.Text);
+                Endereco arr_end = await DataService.GetEnderecoByCep(txtCep.Text);
+                List<Endereco> list_endereco = new List<Endereco>
+                {
+                    arr_end
+                };
 
-                BindingContext= end;
-
-
-                //lst_endereco.ItemsSource = end;
+                lst_endereco.ItemsSource = list_endereco;
             }
             catch (Exception ex)
             {
-                await DisplayAlert("OPS", ex.Message, "OK");
-
+                await DisplayAlert("Ops", ex.Message, "Ok");
             }
             finally
             {

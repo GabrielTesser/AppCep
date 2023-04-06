@@ -4,17 +4,19 @@
              x:Class="AppCep.View.Menu">
     <ContentPage.Content>
         
-        <Grid ColumnDefinitions="*,*" RowDefinitions="*, *, *, *">
+        <Grid Scale="0.9" ColumnDefinitions="*,*" RowDefinitions="*, *, *, *">
 
             <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="API Busca Cep" FontSize="Title" TextColor="Black" HorizontalOptions="Center"/>
 
-            <Button Grid.Row="1" Grid.Column="0" Text="Buscar Cep" Clicked="Button_Clicked"/>
+            <Button Grid.Row="1" Grid.Column="0" Text="Buscar cep por logradouro" TextColor="White" BackgroundColor="Black" Clicked="Button_Clicked"/>
 
-            <Button Grid.Row="1" Grid.Column="1" Text="Buscar Cidade" Clicked="Button_Clicked_1"/>
+            <Button Grid.Row="1" Grid.Column="1" Text="endereco por cep" TextColor="White" BackgroundColor="Black" Clicked="Button_Clicked_1"/>
 
-            <Button Grid.Row="2" Grid.Column="0" Text="Endereco por Cep" Clicked="Button_Clicked_2"/>
-            
-            <Button Grid.Row="2" Grid.Column="1" Text="Bairro por ID da Cidade" Clicked="Button_Clicked_3"/>
+            <Button Grid.Row="2" Grid.Column="0" Text="cidade por estado" TextColor="White" BackgroundColor="Black" Clicked="Button_Clicked_2"/>
+
+            <Button Grid.Row="2" Grid.Column="1" Text="endereco por bairro e cidade" TextColor="White" BackgroundColor="Black" Clicked="Button_Clicked_3"/>
+
+            <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Text="bairro por cidade" ScaleY="0.9" TextColor="White" BackgroundColor="Black" Clicked="Button_Clicked_4"/>
 
         </Grid>
     </ContentPage.Content>
